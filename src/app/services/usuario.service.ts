@@ -19,4 +19,12 @@ export class UsuarioService {
             );
   }
 
+  getUserById( id: string ){
+    const url = `${this._url}/users/${ id }`;
+    return this.http.get(url)
+            .pipe(
+              map((resp:any) => resp['data'])
+            );
+  }
+
 }
